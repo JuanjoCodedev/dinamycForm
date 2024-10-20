@@ -1,0 +1,50 @@
+[
+  {
+    "type": "text",
+    "placeholder": "Ingresa tu nombre",
+    "formControlName": "nombre",
+    "group": "basicData"
+  },
+  {
+    "type": "email",
+    "placeholder": "Ingresa tu correo",
+    "formControlName": "email",
+    "group": "basicData"
+  },
+  {
+    "type": "password",
+    "placeholder": "Ingresa tu contraseña",
+    "formControlName": "password",
+    "group": "basicData"
+  },
+  {
+    "type": "text",
+    "placeholder": "Ingresa tu Carrera",
+    "formControlName": "cra",
+    "group": "delivery"
+  },
+  {
+    "type": "text",
+    "placeholder": "Ingresa tu Calle",
+    "formControlName": "calle",
+    "group": "delivery"
+  },
+  {
+    "type": "text",
+    "placeholder": "Ingresa tu Barrio",
+    "formControlName": "barrio",
+    "group": "delivery"
+  },
+  {
+    "type": "text",
+    "placeholder": "Selecione un tipo",
+    "formControlName": "tipo",
+    "group": "pqr"
+  },
+  {
+    "type": "textarea",
+    "placeholder": "Ingrese su comentario",
+    "formControlName": "comentario",
+    "group": "pqr"
+  }
+]

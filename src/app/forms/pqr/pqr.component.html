@@ -1,0 +1,9 @@
+<section class="bg-blue-50 flex justify-content-center flex-wrap" [formGroup]="formPqr">
+  <div class="w-6 p-4 flex flex-column gap-4">
+    @for (input of pqrInputs; track $index) {
+    <div class="flex flex-column gap-2">
+      <input pInputText [type]="input.type" [placeholder]="input.placeholder" [formControlName]="input.formControlName" />
+    </div>
+    }
+  </div>
+</section>
