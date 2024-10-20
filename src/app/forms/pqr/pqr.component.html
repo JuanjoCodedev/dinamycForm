@@ -1,0 +1,27 @@
+<section class="bg-blue-50 flex justify-content-center flex-wrap" [formGroup]="formPqr">
+  <div class="w-6 p-4 flex flex-column gap-4">
+    @for (input of pqrInputs; track $index) {
+    <div class="flex flex-column gap-2">
+      @if(input.type === 'textarea'){
+      <input pInputText [type]="input.type" [placeholder]="input.placeholder" [formControlName]="input.formControlName" />
+      } @if (input.type === 'dropdown') {
+      <p-dropdown [options]="input.options" [placeholder]="input.placeholder" [formControlName]="input.formControlName"> </p-dropdown>
+      }
+
+      <ng-container>
+        @if (formPqr.get(input.formControlName)?.invalid && (formPqr.get(input.formControlName)?.touched || formPqr.get(input.formControlName)?.dirty)) {
+        <ng-container>
+          <div *ngFor="let validator of input.validators; track: $index">
+            @if(formPqr.get(input.formControlName)?.hasError(validator.type)){
+            <ng-container>
+              <p class="m-0 text-red-500 font-medium">{{ validator.message }}</p>
+            </ng-container>
+            }
+          </div>
+        </ng-container>
+        }
+      </ng-container>
+    </div>
+    }
+  </div>
+</section>

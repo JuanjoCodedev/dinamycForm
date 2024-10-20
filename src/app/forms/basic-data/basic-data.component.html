@@ -1,0 +1,21 @@
+<section class="bg-blue-50 flex justify-content-center flex-wrap" [formGroup]="formProfile">
+  <div class="w-6 p-4 flex flex-column gap-4">
+    @for (input of basicDataInputs; track $index) {
+    <div class="flex flex-column gap-2">
+      <input pInputText [type]="input.type" [placeholder]="input.placeholder" [formControlName]="input.formControlName" />
+
+      @if (formProfile.get(input.formControlName)?.invalid && (formProfile.get(input.formControlName)?.touched || formProfile.get(input.formControlName)?.dirty)) {
+      <ng-container>
+        <div *ngFor="let validator of input.validators; track: $index">
+          @if(formProfile.get(input.formControlName)?.hasError(validator.type)){
+          <ng-container>
+            <p class="m-0 text-red-500 font-medium">{{ validator.message }}</p>
+          </ng-container>
+          }
+        </div>
+      </ng-container>
+      }
+    </div>
+    }
+  </div>
+</section>

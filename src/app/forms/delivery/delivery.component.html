@@ -1,0 +1,21 @@
+<section class="bg-blue-50 flex justify-content-center flex-wrap" [formGroup]="formDelivery">
+  <div class="w-6 p-4 flex flex-column gap-4">
+    @for (input of deliveryInputs; track $index) {
+    <div class="flex flex-column gap-2">
+      <input pInputText [type]="input.type" [placeholder]="input.placeholder" [formControlName]="input.formControlName" />
+
+      @if (formDelivery.get(input.formControlName)?.invalid && (formDelivery.get(input.formControlName)?.touched || formDelivery.get(input.formControlName)?.dirty)) {
+      <ng-container>
+        <div *ngFor="let validator of input.validators; track: $index">
+          @if(formDelivery.get(input.formControlName)?.hasError(validator.type)){
+          <ng-container>
+            <p class="m-0 text-red-500 font-medium">{{ validator.message }}</p>
+          </ng-container>
+          }
+        </div>
+      </ng-container>
+      }
+    </div>
+    }
+  </div>
+</section>

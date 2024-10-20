@@ -1,0 +1,68 @@
+[
+  {
+    "type": "text",
+    "placeholder": "Ingresa tu nombre",
+    "formControlName": "nombre",
+    "group": "basicData",
+    "validators": [
+      { "type": "required", "message": "El nombre es obligatorio" },
+      { "type": "min", "value": 3, "message": "El nombre no debe ser menor que 3" },
+      { "type": "max", "value": 10, "message": "El nombre no debe ser mayor que 10 " }
+    ]
+  },
+  {
+    "type": "email",
+    "placeholder": "Ingresa tu correo",
+    "formControlName": "email",
+    "group": "basicData"
+  },
+  {
+    "type": "password",
+    "placeholder": "Ingresa tu contraseña",
+    "formControlName": "password",
+    "group": "basicData"
+  },
+  {
+    "type": "text",
+    "placeholder": "Ingresa tu Carrera",
+    "formControlName": "cra",
+    "group": "delivery"
+  },
+  {
+    "type": "text",
+    "placeholder": "Ingresa tu Calle",
+    "formControlName": "calle",
+    "group": "delivery"
+  },
+  {
+    "type": "text",
+    "placeholder": "Ingresa tu Barrio",
+    "formControlName": "barrio",
+    "group": "delivery"
+  },
+  {
+    "type": "text",
+    "placeholder": "Código postal",
+    "formControlName": "codigoPostal",
+    "group": "delivery",
+    "validators": [{ "type": "pattern", "value": "^[0-9]{5}$", "message": "El código postal debe tener 5 dígitos" }]
+  },
+  {
+    "type": "dropdown",
+    "placeholder": "Seleccione un tipo",
+    "formControlName": "tipo",
+    "group": "pqr",
+    "options": [
+      { "label": "Tipo 1", "value": 1 },
+      { "label": "Tipo 2", "value": 2 },
+      { "label": "Tipo 3", "value": 3 }
+    ],
+    "validators": [{ "type": "required", "message": "El nombre es obligatorio" }]
+  },
+  {
+    "type": "textarea",
+    "placeholder": "Ingrese su comentario",
+    "formControlName": "comentario",
+    "group": "pqr"
+  }
+]
