@@ -1,0 +1,27 @@
+<p-steps [model]="steps" [activeIndex]="activeStepIndex"></p-steps>
+
+<form [formGroup]="form" (ngSubmit)="onSubmit()">
+  <ng-container>
+    @if (activeStepIndex === 0) {
+    <app-basic-data [formProfile]="currentGroup" [inputs]="inputs"></app-basic-data>
+    }
+  </ng-container>
+
+  <ng-container>
+    @if (activeStepIndex === 1) {
+    <app-delivery [formDelivery]="currentGroup" [inputs]="inputs"></app-delivery>
+    }
+  </ng-container>
+
+  <ng-container>
+    @if (activeStepIndex === 2){
+    <app-pqr [formPqr]="currentGroup" [inputs]="inputs"></app-pqr>
+    }
+  </ng-container>
+
+  <p-buttonGroup>
+    <p-button type="button" icon="pi pi-angle-left" size="small" (click)="prev()" [disabled]="activeStepIndex === 0" />
+    <p-button type="button" icon="pi pi-angle-right" size="small" (click)="next()" [disabled]="activeStepIndex === steps.length - 1" />
+    <p-button type="submit" icon="pi pi-send" size="small" />
+  </p-buttonGroup>
+</form>
